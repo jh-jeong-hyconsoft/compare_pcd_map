@@ -1,0 +1,15 @@
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# ROS 2 / colcon outputs when this package is used as a repository root
+/build/
+/install/
+/log/
+
+# Editor and OS files
+.vscode/
+.idea/
+*~
+.DS_Store

@@ -1,0 +1,32 @@
+pcd_map_publisher:
+  ros__parameters:
+    # Relative paths are resolved from the installed pcd_compare package share directory.
+    ref_directory: data/ref
+    eval_directory: data/eval
+    frame_id: map
+
+    alignment:
+      enabled: true
+      # identity is safer than centroid for partial evaluation maps.
+      initial_guess: identity
+      voxel_leaf_size: 0.5
+      max_correspondence_distance: 3.0
+      max_iterations: 100
+      transformation_epsilon: 1.0e-8
+      fitness_epsilon: 1.0e-6
+      min_inlier_ratio: 0.5
+      max_inlier_ratio_drop: 0.02
+      min_relative_mse_improvement: 0.01
+
+    visualization:
+      # Reference uses the brightest color; eval colors follow sorted filenames.
+      reference_color: "255; 255; 255"
+      eval_colors:
+        - "255; 64; 64"
+        - "64; 255; 64"
+        - "64; 160; 255"
+        - "255; 64; 255"
+        - "255; 160; 32"
+        - "64; 255; 255"
+      point_size: 2
+      grid_cell_size: 5.0
